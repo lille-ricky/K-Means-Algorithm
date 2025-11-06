@@ -1,5 +1,6 @@
-## TP 6 
+## TP 6
 
+import random
 
 def euclid_distance(point1 : int, point2 : int) -> float :
     """
@@ -57,3 +58,27 @@ def calculate_centers(points : list) -> int :
         center[i] /= len(points)
 
     return center
+
+def kmeans(points : list , k : int , max_iterations = 100) :
+    """
+    performs the K-means clustering algorithm on a set of points.
+    
+    Args :
+        points (list) : list of points to cluster.
+        k : numbe rof clusters 
+        max_iterations (int) : maximum number of iterations to perform.
+
+    Returns :
+
+    """
+
+    n = len(points)
+
+    random_indexes = random.sample(range(n), k)
+    centers = [points[i] for i in random_indexes]
+
+    clusters = [0] * n
+
+    for iteration in range(max_iterations) :
+        new_clusters = [0] * n 
+        
